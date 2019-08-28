@@ -17,6 +17,8 @@
 		D5B752B82316127300277784 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B752B72316127300277784 /* DocumentViewController.swift */; };
 		D5B752BA231612C200277784 /* DocumentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B752B9231612C200277784 /* DocumentListViewController.swift */; };
 		D5B752BC2316170600277784 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B752BB2316170600277784 /* DocumentTableViewCell.swift */; };
+		D5B752BF23162B2900277784 /* DocumentsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B752BE23162B2900277784 /* DocumentsClass.swift */; };
+		D5B752C123162B4700277784 /* DocumentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B752C023162B4700277784 /* DocumentStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D5B752B72316127300277784 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		D5B752B9231612C200277784 /* DocumentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListViewController.swift; sourceTree = "<group>"; };
 		D5B752BB2316170600277784 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
+		D5B752BE23162B2900277784 /* DocumentsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsClass.swift; sourceTree = "<group>"; };
+		D5B752C023162B4700277784 /* DocumentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		D5B7528523160F9B00277784 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				D5B752BD23162ADB00277784 /* Model */,
 				D5B7528623160F9B00277784 /* AppDelegate.swift */,
 				D5B752B9231612C200277784 /* DocumentListViewController.swift */,
 				D5B752BB2316170600277784 /* DocumentTableViewCell.swift */,
@@ -132,6 +137,15 @@
 				D5B752AB23160F9C00277784 /* Info.plist */,
 			);
 			path = DocumentsUITests;
+			sourceTree = "<group>";
+		};
+		D5B752BD23162ADB00277784 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5B752BE23162B2900277784 /* DocumentsClass.swift */,
+				D5B752C023162B4700277784 /* DocumentStruct.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +282,9 @@
 				D5B752B82316127300277784 /* DocumentViewController.swift in Sources */,
 				D5B752BC2316170600277784 /* DocumentTableViewCell.swift in Sources */,
 				D5B7528F23160F9B00277784 /* Documents.xcdatamodeld in Sources */,
+				D5B752BF23162B2900277784 /* DocumentsClass.swift in Sources */,
 				D5B752BA231612C200277784 /* DocumentListViewController.swift in Sources */,
+				D5B752C123162B4700277784 /* DocumentStruct.swift in Sources */,
 				D5B7528723160F9B00277784 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
