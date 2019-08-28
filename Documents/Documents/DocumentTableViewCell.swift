@@ -10,6 +10,10 @@ import UIKit
 
 class DocumentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var textNameLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var modDateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
