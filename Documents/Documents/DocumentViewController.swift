@@ -10,21 +10,39 @@ import UIKit
 
 class DocumentViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var docTextView: UITextView!
+    
+       var docsOP: Document?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let document = docsOP {
+            docTextView.text = document.content ?? ""
+            titleTextField.text = document.name
+            
+            title = document.name
+        } else {
+            title = ""
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func alteredName(_ sender: Any) {
+            title = titleTextField.text
     }
-    */
+    
+    
+    @IBAction func save(_ sender: Any) {
+        guard let name = titleTextField.text else {
+            return
+        }
+        
+        Documents.save(name: name, content: docTextView.text)
+        navigationController?.popViewController(animated: true)
+    }
+
 
 }

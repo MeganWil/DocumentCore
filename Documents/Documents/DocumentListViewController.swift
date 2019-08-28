@@ -23,8 +23,23 @@ class DocumentListViewController: UIViewController, UITableViewDelegate, UITable
             dateForm.dateStyle = .medium
             dateForm.timeStyle = .medium
         
+        
+      documentTable.rowHeight = 80.0
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        doc = Documents.get()
+        documentTable.reloadData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,7 +55,7 @@ class DocumentListViewController: UIViewController, UITableViewDelegate, UITable
         if let cell = cell as? DocumentTableViewCell{
             let document = doc[indexPath.row]
             cell.textNameLabel.text = document.name
-            cell.sizeLabel.text = String(document.size) + " bytes"
+            cell.sizeLabel.text = String("Size: \(document.size)") + " bytes"
             cell.modDateLabel.text = dateForm.string(from: document.modDate)
         }
         
@@ -58,14 +73,13 @@ class DocumentListViewController: UIViewController, UITableViewDelegate, UITable
         return [remove]
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "selected" {
+            if let destination = segue.destination as? DocumentViewController,
+                let row = documentTable.indexPathForSelectedRow?.row {
+                destination.docsOP = doc[row]
+            }
+        }
     }
-    */
-
+    
 }
